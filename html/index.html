@@ -3,7 +3,80 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/swiper-3.4.2.min.css"/>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/swiper-3.4.2.min.js"></script>
 	</head>
 	<body>
+		<div class="wrap">
+			<div class="header">
+				<!--导航栏-->
+				<div class="nav">
+					<div class="nav-left">Restaurant</div>
+					<div class="nav-right">
+						<li class="nr-list">WELCOME</li>
+						<li class="nr-list">ABOUT</li>
+						<li class="nr-list">PRICING</li>
+						<li class="nr-list">BEER</li>
+						<li class="nr-list">BREAD</li>
+						<li class="nr-list">FEATURED</li>
+						<li class="nr-list">RESERVATION</li>
+						<li class="nr-list">CONTACT</li>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<!--轮播图-->
+				<div class="shuffling">
+					<div class="swiper-container">
+					    <div class="swiper-wrapper">
+					        <div class="swiper-slide"><img src="../img/steak.jpg"/></div>
+					        <div class="swiper-slide"><img src="../img/breakfast.jpg"/></div>
+					        <div class="swiper-slide"><img src="../img/slider2.jpg"/></div>
+					        <div class="swiper-slide"><img src="../img/slider3.JPG"/></div>
+					        <div class="swiper-slide"><img src="../img/beer.jpg"/></div>
+					    </div>
+					    <!-- 如果需要分页器 -->
+					    <div class="swiper-pagination"></div>
+					    
+					    <!-- 如果需要导航按钮 -->
+					    <div class="swiper-button-prev"></div>
+					    <div class="swiper-button-next"></div>
+					</div>
+				</div>
+				
+				<div class="c-center">
+					<div class="cc-left">
+						<h1>About us</h1>
+						<p class="desc-text">Restaurant is a place for simplicity. Good food, good beer, and good service. Simple is the name of the game, and we’re good at finding it in all the right places, even in your dining experience. We’re a small group from Denver, Colorado who make simple food possible. Come join us and see what simplicity tastes like.</p>
+					</div>
+					<div class="cc-right">
+						<div class="ccr-img"><img src="../img/kabob.jpg"/></div>
+						<div class="ccr-img"><img src="../img/limes.jpg" alt="" /></div>
+						<div class="ccr-img"><img src="../img/radish.jpg" alt="" /></div>
+						<div class="ccr-img"><img src="../img/corn.jpg" alt="" /></div>
+					</div>
+				</div>
+			</div>
+			<div class="footer"></div>
+		</div>
+		
+		<script type="text/javascript">
+			var mySwiper = new Swiper ('.swiper-container', {
+			    direction: 'horizontal',
+			    loop: true,
+			    autoplay : 3000,
+			    autoplayDisableOnInteraction: false,
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			    
+			    // 如果需要前进后退按钮
+			    nextButton: '.swiper-button-next',
+			    prevButton: '.swiper-button-prev',
+			    
+			    
+ 			 }) 
+		</script>
 	</body>
 </html>
