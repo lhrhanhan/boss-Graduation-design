@@ -3,6 +3,10 @@
 	padding: 0;
 }
 
+.wrap {
+	height: 6000px;
+}
+
 .nav {
 	background-color: #2B2B2B;
 	width: 100%;
@@ -105,3 +109,87 @@ li {
 	width: 100%;
 	height: 100%;
 }
+
+.bitImg {
+	margin-top: 80px;
+	position: relative;
+}
+
+.bitImg img {
+	
+}
+
+.price {
+	font-size: 6.5em;
+    position: absolute;
+    top: 41%;
+    width: 100%;
+    color: white;
+    padding: 0;
+    border: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+h1 span {
+	color: white;
+    padding: 0;
+    border-bottom: 10px solid #fff;
+}
+
+.dinner {
+	margin-top: 65px;
+}
+
+.dinner-list {
+	display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.dinner-list li {
+	display: inline-block;
+	color: black;
+	font-weight: bold;
+    width: auto;
+    padding: 6px 10px;
+    margin-right: 15px;
+    font-size: 1.8em;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+
+.dinner-list li:hover {
+	color: rgb(129, 24, 24);
+}
+
+.di-img {
+	max-width: 21%;
+	width: 18%;
+	display: inline-block;
+	margin-left: 45px;
+	margin-top: 30px;
+}
+
+.di-img img {
+	width: 100%;
+}
+
+.dinner-img {
+	margin-left: 100px;
+}
+
+.dinner-img h2 {
+	height: 90px;
+	width: 100%;
+	margin: 0 auto;
+	line-height: 80px;
+	text-align: center;
+	background-color: #EE2C2C;
+	color: white;
+	margin-top: -5px;
+	font-size: 34px;
+}
+
