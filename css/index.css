@@ -3,9 +3,6 @@
 	padding: 0;
 }
 
-.wrap {
-	height: 6000px;
-}
 
 .nav {
 	background-color: #2B2B2B;
@@ -138,7 +135,9 @@ h1 span {
 }
 
 .dinner {
-	margin-top: 65px;
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
 }
 
 .dinner-list {
@@ -147,6 +146,7 @@ h1 span {
     text-align: center;
     margin-bottom: 25px;
     overflow: hidden;
+
 }
 
 .dinner-list li {
@@ -177,9 +177,6 @@ h1 span {
 	width: 100%;
 }
 
-.dinner-img {
-	margin-left: 100px;
-}
 
 .dinner-img h2 {
 	height: 90px;
@@ -193,3 +190,162 @@ h1 span {
 	font-size: 34px;
 }
 
+.beer {
+	width: 100%;
+	margin-top: 50px;
+	position: relative;
+}
+
+.beer img {
+	width: 100%;
+}
+
+.beer-font {
+	font-size: 6.5em;
+    position: absolute;
+    top: 41%;
+    width: 100%;
+    color: white;
+    padding: 0;
+    border: 0;
+    display: inline-block;
+    text-align: center;
+    font-weight: 800;
+}
+
+.beer-font span {
+	color: white;
+    padding: 0;
+    border-bottom: 10px solid #fff;
+}
+
+.ourBeer {
+	margin-top: 86px;
+	overflow: hidden;
+	float: left;
+}
+
+.ouerBeer-left {
+	width: 50%;
+	padding-left: 5%;
+	float: left;
+	box-sizing: border-box;
+}
+
+.ouerBeer-left img {
+	width: 80%;
+}
+
+.ouerBeer-right {
+	width: 50%;
+	float: right;
+	
+}
+
+.or-top {
+	height: 80px;
+	margin-left: 16%;
+	font-size: 40px;
+    font-weight:1000;
+    width: 380px;
+    letter-spacing: 0.040em;
+    border: 1px solid #2f2e2f;
+    text-align: center;
+    line-height: 82px;
+}
+
+.or-bottom {
+	width: 70%;
+	margin-top: 100px;
+	font-size: 20px;
+    line-height: 55px;
+    text-align: justify;
+}
+
+.fear{
+	padding-top: 50px;
+}
+
+
+.feat {
+	margin-top: 730px;
+	width: 100%;
+	position: relative;
+}
+
+.feat img{
+	width: 100%;
+}
+
+.feat-font {
+	font-size: 6.5em;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    color: white;
+    padding: 0;
+    border: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.feat-font span {
+	color: white;
+    padding: 0;
+    border-bottom: 10px solid #fff;
+}
+
+.hd-left {
+	width: 50%;
+	padding-left: 15%;
+	float: left;
+	box-sizing: border-box;
+}
+
+.hdl-top {
+	height: 250px;
+	margin-left: 16%;
+	font-size: 48px;
+    font-weight:1000;
+    width: 380px;
+    letter-spacing: 0.040em;
+    border: 1px solid #2f2e2f;
+    text-align: center;
+    line-height: 82px;
+}
+
+
+.footer {
+	width: 100%;
+	height: 97px;
+	background-color: #1C1C1C;
+	color: white;
+	font-size: 34px;
+	text-align: center;
+	line-height: 100px;
+}
+
+.hdl-bottom {
+	width: 70%;
+	margin-top: 60px;
+	font-size: 20px;
+    line-height: 55px;
+    text-align: justify;
+}
+
+.haveDis {
+	margin-top: 80px;
+}
+
+.hd-right {
+	float: right;
+	width: 50%;
+}
+
+.hd-right img {
+	width: 70%;
+}
+
+.haveDis {
+	overflow: hidden;
+}
