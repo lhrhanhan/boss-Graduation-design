@@ -3,14 +3,128 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>manage</title>
+		<link rel="stylesheet" type="text/css" href="../css/management.css"/>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="warp">
 			<div class="header">
-				
+				<div class="nav">
+					欢迎来到餐厅管理系统
+					<img src="../img/whx.png"/>
+					<div class="ser">
+						<input type="text" placeholder="搜索"/>
+					</div>
+				</div>
 			</div>
-			<div class="content"></div>
+			<div class="content">
+				<div class="aside">
+					<li class="as-img">
+						<img src="../img/mannerimg.jpg"/>
+						
+					</li>
+					<li class="as-list">
+						<img src="../img/xitong.png"/>
+						<a href="##">系统管理</a>
+					</li>
+					<li class="as-list">
+						<img src="../img/baobiao.png"/>
+						<a href="##">报表中心</a>
+					</li>
+					<li class="as-list">
+						<img src="../img/caidan.png"/>
+						<a href="##">菜单管理</a>
+					</li>
+					<li class="as-list">
+						<img src="../img/qiantai.png"/>
+						<a href="##">前台管理</a>
+					</li>
+					<li class="as-list">
+						<img src="../img/cangku.png"/>
+						<a href="##">仓库管理</a>
+					</li>
+					<li class="as-list">
+						<img src="../img/huiyuan.png"/>
+						<a href="##">会员管理</a>
+					</li>
+				</div>
+				
+				<div class="section">
+					<div class="sec-dd">
+						Welcome,<span id="mann"><strong>系统管理员</strong></span>
+						<div class="shijian">当前时间为：</div>
+						<div class="nowtime"></div>
+						<div class="zhuxiao"><img src="../img/zhuxiao.png" alt="" /><strong>注销</strong></div>
+					</div>
+					
+					<div class="sec-right">
+						<h2>系统管理</h2>
+						<ul>
+							<li class="sr-list">员工信息</li>
+							<li class="sr-list-last">权限管理</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="content-main">
+					<div class="cm-title">员工信息管理</div>
+					
+					<div class="content-active">
+						<button>增加员工</button>
+						<button>查询员工</button>
+					</div>
+					
+					<div class="cm-table">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;员工信息</p>
+						<div class="cmt-tbody">
+							<table border="0" cellspacing="0" cellpadding="8">
+								<tr>
+									<th width="7%">工号</th>
+									<th width="15%">姓名</th>
+									<th width="32%">身份证</th>
+									<th width="12%">工资</th>
+									<th width="20%">职位</th>
+									<th width="13%">操作</th>
+								</tr>
+								
+								<tr id="cmt-list">
+									<td>111</td>
+									<td>小米</td>
+									<td>52212510000101111</td>
+									<td>4000</td>
+									<td>厨师</td>
+									<td><button id="delete">删除</button><button>修改</button></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="footer"></div>
 		</div>
+		
+		
+		<script type="text/javascript">
+			// 封装的时间函数
+			 function formatDate(now) { 
+                var year=now.getFullYear(); 
+                var month=now.getMonth()+1; 
+                var date=now.getDate(); 
+                var hour=now.getHours(); 
+                var minute=now.getMinutes(); 
+                var second=now.getSeconds(); 
+                return year+"年"+month+"月"+date+"日"+" "+hour+"点"+minute+"分"; 
+            } 
+            
+            let nowTime = new Date();
+            let time =formatDate(nowTime);
+           	$('.nowtime').text(time)
+           	
+           	$('#delete').click(function(){
+           		$('#cmt-list').remove()
+           	})
+           	
+			
+		</script>
 	</body>
 </html>
