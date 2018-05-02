@@ -206,7 +206,7 @@ a {
 }
 
 .content-main {
-	
+	display: none;
 	width:1300px;
 	margin-top: 20px;
 	margin-left: 10px;
@@ -294,4 +294,12 @@ td button {
 
 .sec-right ul li:hover {
 	color: blue;
+}
+
+
+.rootManagement {
+	float: left;
+	width:1300px;
+	margin-top: 20px;
+	margin-left: 10px;
 }

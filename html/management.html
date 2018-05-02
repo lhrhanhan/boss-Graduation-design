@@ -66,6 +66,7 @@
 					</div>
 				</div>
 				
+				<!--员工信息管理 html 界面包括dom操作-->
 				<div class="content-main">
 					<div class="cm-title">员工信息管理</div>
 					
@@ -99,6 +100,42 @@
 						</div>
 					</div>
 				</div>
+				
+				
+				<!--权限管理界面-->
+				<div class="rootManagement">
+					<div class="cm-title">权限管理</div>
+					
+					<div class="content-active">
+						<button>增加员工权限</button>
+					</div>
+					
+					<div class="cm-table">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;权限人员信息</p>
+						<div class="cmt-tbody">
+							<table border="0" cellspacing="0" cellpadding="8">
+								<tr>
+									<th width="7%">工号</th>
+									<th width="15%">姓名</th>
+									<th width="32%">身份证</th>
+									<th width="12%">权限</th>
+									<th width="20%">职位</th>
+									<th width="13%">操作</th>
+								</tr>
+								
+								<tr id="cmt-list">
+									<td>111</td>
+									<td>小米</td>
+									<td>52212510000101111</td>
+									<td>仓库管理</td>
+									<td>厨师</td>
+									<td><button id="delete">删除</button><button>修改</button></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			
 			</div>
 			<div class="footer"></div>
 		</div>
@@ -122,6 +159,16 @@
            	
            	$('#delete').click(function(){
            		$('#cmt-list').remove()
+           	})
+           	
+           	$('.sr-list').click(function(){
+           		$('.content-main').show()
+           		$('.rootManagement').hide()
+           	})
+           	
+           	$('.sr-list-last').click(function(){
+           		$('.content-main').hide()
+           		$('.rootManagement').show()
            	})
            	
 			
