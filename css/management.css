@@ -65,13 +65,17 @@ li {
 .as-list {
 	width: 129px;
 	height: 119px;
-	background-color:rgb(76,87,98);
+	/*background-color:rgb(76,87,98);*/
 	text-align: center;
 	margin-top: 15px;
 	border-radius: 5px;
 	padding-top: 24px;
 	box-sizing: border-box;
 	line-height: 30px;
+}
+
+.first-as-list {
+	background-color:rgb(76,87,98);
 }
 
 

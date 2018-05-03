@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>manage</title>
+		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/management.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/statement.css"/>
 		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
@@ -23,11 +24,11 @@
 						<img src="../img/mannerimg.jpg"/>
 						
 					</li>
-					<li class="as-list first-as-list">
+					<li class="as-list">
 						<img src="../img/xitong.png"/>
 						<a href="##">系统管理</a>
 					</li>
-					<li class="as-list">
+					<li class="as-list sec-as-list">
 						<img src="../img/baobiao.png"/>
 						<a href="##">报表中心</a>
 					</li>
@@ -58,86 +59,68 @@
 					</div>
 					
 					<div class="sec-right">
-						<h2>系统管理</h2>
+						<h2>报表中心</h2>
 						<ul>
-							<li class="sr-list">员工信息</li>
-							<li class="sr-list-last">权限管理</li>
+							<li class="sr-list-last">报表</li>
 						</ul>
 					</div>
 				</div>
-				
-				<!--员工信息管理 html 界面包括dom操作-->
-				<div class="content-main">
-					<div class="cm-title">员工信息管理</div>
 					
-					<div class="content-active">
-						<button>增加员工</button>
-						<button>查询员工</button>
-					</div>
-					
-					<div class="cm-table">
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;员工信息</p>
-						<div class="cmt-tbody">
-							<table border="0" cellspacing="0" cellpadding="8">
-								<tr>
-									<th width="7%">工号</th>
-									<th width="15%">姓名</th>
-									<th width="32%">身份证</th>
-									<th width="12%">工资</th>
-									<th width="20%">职位</th>
-									<th width="13%">操作</th>
-								</tr>
-								
-								<tr id="cmt-list">
-									<td>111</td>
-									<td>小米</td>
-									<td>52212510000101111</td>
-									<td>4000</td>
-									<td>厨师</td>
-									<td><button id="delete">删除</button><button>修改</button></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				
-				
 				<!--权限管理界面-->
 				<div class="rootManagement">
-					<div class="cm-title">权限管理</div>
+					<div class="cm-title">报表中心</div>
 					
 					<div class="content-active">
-						<button>增加员工权限</button>
+						<button>报表中心导出EXCLE</button>
+						<button>月销售额导出EXCLE</button>
 					</div>
 					
 					<div class="cm-table">
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;权限人员信息</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;报表信息</p>
 						<div class="cmt-tbody">
 							<table border="0" cellspacing="0" cellpadding="8">
 								<tr>
-									<th width="7%">工号</th>
-									<th width="15%">姓名</th>
-									<th width="32%">身份证</th>
-									<th width="12%">权限</th>
-									<th width="20%">职位</th>
-									<th width="13%">操作</th>
+									<th width="7%">行号</th>
+									<th width="15%">消费单号</th>
+									<th width="10%">应收金额</th>
+									<th width="6%">实收金额</th>
+									<th width="10%">支付方式</th>
+									<th width="10%">状态</th>
+									<th width="20%">结算时间</th>
 								</tr>
 								
 								<tr id="cmt-list">
 									<td>111</td>
-									<td>小米</td>
-									<td>52212510000101111</td>
-									<td>仓库管理</td>
-									<td>厨师</td>
-									<td><button id="delete">删除</button><button>修改</button></td>
+									<td>33333333</td>
+									<td>140</td>
+									<td>110</td>
+									<td>微信</td>
+									<td>已结</td>
+									<td>2018年11月12号</td>
 								</tr>
 							</table>
 						</div>
+						
+						<div class="monthSale">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;月报表信息</p>
+							<div class="cmt-tbody">
+							<table border="0" cellspacing="0" cellpadding="8">
+								<tr>
+									<th width="50%">每日销售单数</th>
+									<th width="50%">总销售额</th>
+								</tr>
+								
+								<tr id="cmt-list">
+									<td>1111</td>
+									<td>33333333</td>
+								</tr>
+							</table>
+						</div>
+						</div>
 					</div>
 				</div>
-			
 			</div>
-			<div class="footer"></div>
+		
 		</div>
 		
 		
