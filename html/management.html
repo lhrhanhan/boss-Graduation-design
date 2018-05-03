@@ -67,8 +67,9 @@
 					<div class="cm-title">员工信息管理</div>
 					
 					<div class="content-active">
-						<button>增加员工</button>
-						<button>查询员工</button>
+						<button id="addPerson">增加员工</button>
+						<button id="searchPerson">查询员工</button>
+						<button id="showPerson">显示员工信息</button>
 					</div>
 					
 					<div class="cm-table">
@@ -85,13 +86,14 @@
 								</tr>
 								
 								<tr id="cmt-list">
-									<td>111</td>
+									<td id="zhujian">111</td>
 									<td>小米</td>
 									<td>52212510000101111</td>
 									<td>4000</td>
 									<td>厨师</td>
-									<td><button id="delete">删除</button><button>修改</button></td>
+									<td><button id="delete">删除</button><button id="xiugai">修改</button></td>
 								</tr>
+								
 							</table>
 						</div>
 					</div>
@@ -120,12 +122,12 @@
 								</tr>
 								
 								<tr id="cmt-list">
-									<td>111</td>
+									<td >111</td>
 									<td>小米</td>
 									<td>52212510000101111</td>
 									<td>仓库管理</td>
 									<td>厨师</td>
-									<td><button id="delete">删除</button><button>修改</button></td>
+									<td><button id="delete">删除</button><button >修改</button></td>
 								</tr>
 							</table>
 						</div>
@@ -133,7 +135,78 @@
 				</div>
 			
 			</div>
-			<div class="footer"></div>
+			<div class="footer">
+				
+				<div class="dis-form">
+					<p>增加员工</p>
+					<form method="get" onsubmit="return check()">
+					
+						<li class="df-list">
+							工号：<input id="biaohao" type="text" />
+						</li>
+						<li class="df-list">
+							姓名：<input id="name" type="text" />
+						</li>
+						<li class="df-list">
+							证件：<input id="zhengjian" type="text" />
+						</li>
+						<li class="df-list">
+							工资：<input id="gongzi" type="text">
+						</li>
+						<li class="df-list">
+							职位：<select id="zhiwei">
+										  <option value="前台餐桌">前台餐桌</option>
+										  <option value="前台打包">前台打包</option>
+										  <option value="前台打菜">前台打菜</option>
+										  <option value="前台收银员">前台收银员</option>
+										  <option value="后厨厨师">后厨厨师</option>
+										  <option value="后厨厨师长">后厨厨师长</option>
+										  <option value="后厨洗碗工">后厨洗碗工</option>
+									</select>
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+						
+					</form>
+				</div>
+			</div>
+			<div class="ban"></div>
+			
+			<div class="xg-form">
+					<p>修改员工</p>
+					<form method="get" onsubmit="return check()">
+					
+						<li class="df-list">
+							工号：<span></span>
+						</li>
+						<li class="df-list">
+							姓名：<input id="name" type="text" />
+						</li>
+						<li class="df-list">
+							证件：<input id="zhengjian" type="text" />
+						</li>
+						<li class="df-list">
+							工资：<input id="gongzi" type="text">
+						</li>
+						<li class="df-list">
+							职位：<select id="zhiwei">
+										  <option value="前台餐桌">前台餐桌</option>
+										  <option value="前台打包">前台打包</option>
+										  <option value="前台打菜">前台打菜</option>
+										  <option value="前台收银员">前台收银员</option>
+										  <option value="后厨厨师">后厨厨师</option>
+										  <option value="后厨厨师长">后厨厨师长</option>
+										  <option value="后厨洗碗工">后厨洗碗工</option>
+									</select>
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+					</form>
+				</div>
+			</div>
+			<div class="xg-ban"></div>
 		</div>
 		
 		
@@ -167,13 +240,52 @@
            		$('.rootManagement').show()
            	})
            	
-//         	$('.as-list').click(function(){
-//         		let inx = $(this).index()
-//         		$('.as-list').css('background-color':'#4C5762')
-//         	})
+           	$('.ban').click(function(){
+           		$('.ban').hide()
+           		$('.dis-form').hide()
+           	})
            	
+           	$('#addPerson').click(function(){
+           		
+           		$('.ban').show()
+           		$('.dis-form').show()
+           	})
            	
-			
+           	function check () {
+           		var a = document.getElementById('biaohao').value
+	           	var b = document.getElementById('name').value
+	           	var c = document.getElementById('zhengjian').value
+	           	var d = document.getElementById('gongzi').value
+	           	var e = document.getElementById('zhiwei').value           		
+           		if (a === '' || b === '' || c === '' || d === '' || e === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		return true
+           		$('.ban').hide()
+	           	$('.dis-form').hide()
+	           	console.log(a,b,c,d,e)
+           	}           
+           	$('#showPerson').click(function() {
+           		$('.cm-table').slideToggle()
+           	})
+           	
+           	$('#xiugai').click(function () {
+           		var bhz = $('#zhujian').text()
+           		$('.xg-ban').show()
+           		$('.xg-form').show()	
+           		$()
+           	})
+           	
+           	$('.xg-ban').click(function () {
+           		$('.xg-ban').hide()
+           		$('.xg-form').hide()	
+           	})
+           	
+           	$('#zhujian').click(function () {
+           		console.log($('#zhujian').val())
+           	})
+           	
 		</script>
 	</body>
 </html>
