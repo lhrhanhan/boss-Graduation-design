@@ -120,7 +120,9 @@
                 var second=now.getSeconds(); 
                 return year+"年"+month+"月"+date+"日"+" "+hour+"点"+minute+"分"; 
             } 
-            
+            let nowTime = new Date();
+            let time =formatDate(nowTime);
+           	$('.nowtime').text(time)
            $('#dised').click(function(){
            		$('.cm-table').slideToggle()
            })
