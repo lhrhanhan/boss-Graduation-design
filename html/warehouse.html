@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/management.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/statement.css"/>
+		<link rel="stylesheet" href="../css/management.css" />
+		<link rel="stylesheet" type="text/css" href="../css/warehouse.css"/>
 		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
@@ -28,9 +28,9 @@
 						<img src="../img/xitong.png"/>
 						<a href="management.html">系统管理</a>
 					</li>
-					<li class="as-list sec-as-list">
+					<li class="as-list">
 						<img src="../img/baobiao.png"/>
-						<a href="reception.html">报表中心</a>
+						<a href="statement.html">报表中心</a>
 					</li>
 					<li class="as-list">
 						<img src="../img/caidan.png"/>
@@ -40,7 +40,7 @@
 						<img src="../img/qiantai.png"/>
 						<a href="reception.html">前台管理</a>
 					</li>
-					<li class="as-list">
+					<li class="as-list six">
 						<img src="../img/cangku.png"/>
 						<a href="warehouse.html">仓库管理</a>
 					</li>
@@ -56,63 +56,44 @@
 					</div>
 					
 					<div class="sec-right">
-						<h2>报表中心</h2>
+						<h2>仓库管理</h2>
 						<ul>
-							<li class="sr-list-last">报表</li>
+							<li class="sr-list-last">食材管理</li>
 						</ul>
 					</div>
 				</div>
 					
 				<!--权限管理界面-->
 				<div class="rootManagement">
-					<div class="cm-title">报表中心</div>
+					<div class="cm-title">菜单管理</div>
 					
 					<div class="content-active">
-						<button>报表中心导出EXCLE</button>
-						<button>月销售额导出EXCLE</button>
+						<button>食材入库</button>
+						<button id="dised">库存汇总</button>
 					</div>
 					
 					<div class="cm-table">
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;报表信息</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;菜品列表</p>
 						<div class="cmt-tbody">
 							<table border="0" cellspacing="0" cellpadding="8">
 								<tr>
-									<th width="7%">行号</th>
-									<th width="15%">消费单号</th>
-									<th width="10%">应收金额</th>
-									<th width="6%">实收金额</th>
-									<th width="10%">支付方式</th>
-									<th width="10%">状态</th>
-									<th width="20%">结算时间</th>
+									<th width="7%">分类名称</th>
+									<th width="15%">菜品编号</th>
+									<th width="10%">食材种类</th>
+									<th width="10%">适用季节</th>
+									<th width="10%">菜品名称</th>
+									<th width="20%">数量</th>
 								</tr>
 								
 								<tr id="cmt-list">
-									<td>111</td>
-									<td>33333333</td>
-									<td>140</td>
-									<td>110</td>
-									<td>微信</td>
-									<td>已结</td>
-									<td>2018年11月12号</td>
+									<td>热菜</td>
+									<td>502</td>
+									<td>土豆</td>
+									<td>春，夏，秋，冬</td>
+									<td>面条</td>
+									<td>30</td>
 								</tr>
 							</table>
-						</div>
-						
-						<div class="monthSale">
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;月报表信息</p>
-							<div class="cmt-tbody">
-							<table border="0" cellspacing="0" cellpadding="8">
-								<tr>
-									<th width="50%">每日销售单数</th>
-									<th width="50%">总销售额</th>
-								</tr>
-								
-								<tr id="cmt-list">
-									<td>1111</td>
-									<td>33333333</td>
-								</tr>
-							</table>
-						</div>
 						</div>
 					</div>
 				</div>
@@ -132,32 +113,13 @@
                 var second=now.getSeconds(); 
                 return year+"年"+month+"月"+date+"日"+" "+hour+"点"+minute+"分"; 
             } 
-            
             let nowTime = new Date();
             let time =formatDate(nowTime);
            	$('.nowtime').text(time)
+           $('#dised').click(function(){
+           		$('.cm-table').slideToggle()
+           })
            	
-           	$('#delete').click(function(){
-           		$('#cmt-list').remove()
-           	})
-           	
-           	$('.sr-list').click(function(){
-           		$('.content-main').show()
-           		$('.rootManagement').hide()
-           	})
-           	
-           	$('.sr-list-last').click(function(){
-           		$('.content-main').hide()
-           		$('.rootManagement').show()
-           	})
-           	
-//         	$('.as-list').click(function(){
-//         		let inx = $(this).index()
-//         		$('.as-list').css('background-color':'#4C5762')
-//         	})
-           	
-           	
-			
 		</script>
 	</body>
 </html>
