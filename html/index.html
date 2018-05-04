@@ -138,10 +138,10 @@
  			 }) 
  			 
  			 // 操作DOM 循环生成dinner的8张图
- 			 for (let i=1; i < 9; i++){
-   			 	let list = $(`<li class='di-img'><img src='../img/food_icon0${i}.jpg'><h2 class='dii-font'>$20</h2></li>`)
+ 			 for (var i=1; i < 9; i++){
+   			 	var list = $(`<li class='di-img'><img src='../img/food_icon0${i}.jpg'><h2 class='dii-font'>$20</h2></li>`)
    			 	$('.dinner-img').append(list)
-				console.log(i)
+				
  			 }
  			
 		</script>

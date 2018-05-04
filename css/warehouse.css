@@ -1,3 +1,62 @@
 .six {
 	background-color:rgb(76,87,98);
 }
+
+.war-rootManagement {
+	float: left;
+	width:1300px;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.re-df-list {
+	padding:15px;
+	color:  #272c32;
+	font-size: 20px;
+	width: 100%;
+	
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.re-df-list input {
+	outline: none;
+	width: 290px;
+    height: 40px;
+    padding-left: 10px;
+   
+    font-size: 18px;
+}
+
+.re-df-list select {
+	outline: none;
+	width: 304px;
+    height: 44px;
+    padding-left: 10px;
+    
+    font-size: 18px;
+}
+
+.wa-xg-form {
+	width: 500px;
+	height: 700px;
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -370px;
+	z-index: 10;
+	display: none;
+}
+
+.wa-xg-form p{
+	color: #272c32;
+    font-size: 20px;
+    padding: 0px 15px;
+    text-align: center;
+    line-height: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0px 1px 0px #677380;
+    margin-top: 20px;
+}

@@ -64,13 +64,12 @@
 				</div>
 					
 				<!--权限管理界面-->
-				<div class="rootManagement">
+				<div class="or-rootManagement">
 					<div class="cm-title">菜单管理</div>
 					
 					<div class="content-active">
-						<button>添加</button>
-						<button>信息修改</button>
-						<button>删除</button>
+						<button id="addDinner">添加菜品</button>
+						<button>查询菜品</button>
 						<button id="dised">菜品列表</button>
 					</div>
 					
@@ -79,29 +78,108 @@
 						<div class="cmt-tbody">
 							<table border="0" cellspacing="0" cellpadding="8">
 								<tr>
-									<th width="7%">分类名称</th>
 									<th width="15%">菜品编号</th>
+									<th width="7%">分类名称</th>
 									<th width="10%">是否推荐</th>
 									<th width="6%">状态</th>
 									<th width="10%">适用季节</th>
 									<th width="10%">菜品名称</th>
-									<th width="20%">价格</th>
-								</tr>
+									<th width="10%">价格</th>
+									<th width="10%">操作</th>
+								</tr> 
 								
 								<tr id="cmt-list">
+									<td id="dinner-id">502</td>
 									<td>热菜</td>
-									<td>502</td>
 									<td>是</td>
 									<td>上菜</td>
 									<td>春，夏，秋，冬</td>
 									<td>面条</td>
 									<td>30</td>
+									<td><button>删除</button><button id="or-xg">修改</button></td>
 								</tr>
 							</table>
 						</div>
 					</div>
 				</div>
 			</div>
+			<footer>
+				<div class="dis-form">
+					<p>增加菜品</p>
+					<form method="get" onsubmit="return check()">
+					
+						<li class="df-list">
+							菜品编号：<input id="biaohao" type="text" />
+						</li>
+						<li class="df-list">
+							分类名称：<select name="" id="name">
+								<option value="素菜">素菜</option>
+								<option value="汤菜">汤菜</option>
+								<option value="荤菜">荤菜</option>
+								<option value="主食">主食</option>
+								<option value="半荤">半荤</option>
+								<option value="凉菜">凉菜</option>
+							</select>
+						</li>
+						<li class="df-list">
+							菜品状态：<select name="" id="buff">
+								<option value="素菜">上菜</option>
+								<option value="汤菜">未上</option>
+							</select>
+						</li>
+						<li class="df-list">
+							菜品名称：<input id="gongzi" type="text">
+						</li>
+						<li class="df-list">
+							菜品价格：<input id="zhiwei" type="text" />
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+						
+					</form>
+				</div>
+				
+				<div class="ban"></div>
+				
+				<div class="xg-form">
+					<p>增加菜品</p>
+					<form method="get" onsubmit="return checked()">
+					
+						<li class="df-list">
+							菜品编号：<span id="xgf-zhujian"></span><span class="noXg">(此项不能修改)</span>
+						</li>
+						<li class="df-list">
+							分类名称：<select name="" id="xg-name">
+								<option value="素菜">素菜</option>
+								<option value="汤菜">汤菜</option>
+								<option value="荤菜">荤菜</option>
+								<option value="主食">主食</option>
+								<option value="半荤">半荤</option>
+								<option value="凉菜">凉菜</option>
+							</select>
+						</li>
+						<li class="df-list">
+							菜品状态：<select name="" id="xg-buff">
+								<option value="素菜">上菜</option>
+								<option value="汤菜">未上</option>
+							</select>
+						</li>
+						<li class="df-list">
+							菜品名称：<input id="xg-gongzi" type="text">
+						</li>
+						<li class="df-list">
+							菜品价格：<input id="xg-zhiwei" type="text" />
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+						
+					</form>
+				</div>
+				
+				<div class="xg-ban"></div>
+			</footer>
 		
 		</div>
 		
@@ -120,10 +198,62 @@
             let nowTime = new Date();
             let time =formatDate(nowTime);
            	$('.nowtime').text(time)
-           $('#dised').click(function(){
-           		$('.cm-table').slideToggle()
-           })
            	
+          	$('#dised').click(function(){
+           		$('.cm-table').slideToggle()
+           	})
+          	
+          	$('#addDinner').click(function () {
+          		$('.dis-form').show()
+          		$('.ban').show()
+          	})
+          	
+          	$('.ban').click(function () {
+          		$('.dis-form').hide()
+          		$('.ban').hide()
+          	})
+          	
+          	function check () {
+           		var a = document.getElementById('biaohao').value
+	           	var b = document.getElementById('name').value
+	           	var c = document.getElementById('buff').value
+	           	var d = document.getElementById('gongzi').value
+	           	var e = document.getElementById('zhiwei').value           		
+           		if (a === '' || b === '' || c === '' || d === '' || e === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		return true
+           	}
+          	
+          	$('#or-xg').click(function () {
+          		$('.xg-ban').show()
+           		$('.xg-form').show()
+          	})
+          	
+          	$('.xg-ban').click(function () {
+          		$('.xg-ban').hide()
+           		$('.xg-form').hide()
+          	})
+           		
+           	$('#or-xg').click(function () {
+           		var a = $('#dinner-id').text()
+           		$('#xgf-zhujian').text(a)
+           	})
+           	
+           	function checked () {
+           		var a = $('#xg-name').val()
+           		var b = $('#xg-buff').val()
+           		var c = $('#xg-gongzi').val()
+           		var d = $('#xg-zhiwei').val()
+           		
+           		if (a === ''|| b === '' || c === '' || d === '') {
+           			alert('请把信息输入完整！')
+                    return false
+           		}
+           		
+           		return true
+           	}
 		</script>
 	</body>
 </html>

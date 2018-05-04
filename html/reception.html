@@ -69,8 +69,8 @@
 					<div class="cm-title">订单信息管理</div>
 					
 					<div class="content-active">
-						<button>增加订单</button>
-						<button>修改订单</button>
+						<button id="addRec">增加订单</button>
+						<button>查询订单</button>
 						<button id="find">查看订单</button>
 						<button id="sales">查看营业额</button>
 						<button>导出营业额</button>
@@ -92,14 +92,14 @@
 								</tr>
 								
 								<tr id="cmt-list">
-									<td>111</td>
+									<td id="cmt-id">111</td>
 									<td>小米</td>
 									<td>13000000000</td>
 									<td>4000</td>
 									<td>2018年1月1号</td>
 									<td>微信</td>
 									<td>是</td>
-									<td><button id="delete">删除</button></td>
+									<td><button id="delete">删除</button><button id="re-xg">修改</button></td>
 								</tr>
 							</table>
 						</div>
@@ -132,7 +132,7 @@
 					<div class="cm-title">会员管理</div>
 					
 					<div class="content-active">
-						<button>增加会员</button>
+						<button id="addVip">增加会员</button>
 					</div>
 					
 					<div class="cm-vip">
@@ -166,7 +166,125 @@
 				</div>
 			
 			</div>
-			<div class="footer"></div>
+			<div class="footer">
+				<div class="dis-form">
+					<p>增加订单</p>
+					<form method="get" onsubmit="return check()">
+					
+						<li class="re-df-list">
+							单号：<input id="re-bianhao" type="text" />
+						</li>
+						<li class="re-df-list">
+							姓名：<input id="re-name" type="text" />
+						</li>
+						<li class="re-df-list">
+							手机号：<input id="re-phone" type="text" />
+						</li>
+						<li class="re-df-list">
+							消费：<input id="re-pay" type="text">
+						</li>
+						
+						<li class="re-df-list">
+							日期：<input id="re-date" type="text">
+						</li>
+						<li class="re-df-list">
+							方式：<select id="re-func">
+										  <option value="前台餐桌">微信</option>
+										  <option value="前台打包">支付宝</option>
+										  <option value="前台打菜">现金</option>
+										  <option value="前台收银员">银行卡</option>
+									</select>
+						</li>
+						<li class="re-df-list">
+							支付：<select id="re-sure">
+										  <option value="是">是</option>
+										  <option value="否">否</option>
+									</select>
+						</li>
+						
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+					</form>
+				</div>
+				<div class="ban"></div>
+				
+				<div class="re-xg-form">
+					<p>修改订单</p>
+					<form method="get" onsubmit="return checked()">
+					
+						<li class="re-df-list">
+							单号：<span id="re-id"></span><span class="noXg">(此项不能修改)</span>
+						</li>
+						<li class="re-df-list">
+							姓名：<input id="re-xg-name" type="text" />
+						</li>
+						<li class="re-df-list">
+							手机号：<input id="re-xg-phone" type="text" />
+						</li>
+						<li class="re-df-list">
+							消费：<input id="re-xg-pay" type="text">
+						</li>
+						
+						<li class="re-df-list">
+							日期：<input id="re-xg-date" type="text">
+						</li>
+						<li class="re-df-list">
+							方式：<select id="re-xg-func">
+										  <option value="前台餐桌">微信</option>
+										  <option value="前台打包">支付宝</option>
+										  <option value="前台打菜">现金</option>
+										  <option value="前台收银员">银行卡</option>
+									</select>
+						</li>
+						<li class="re-df-list">
+							支付：<select id="re-xg-sure">
+										  <option value="是">是</option>
+										  <option value="否">否</option>
+									</select>
+						</li>
+						
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+					</form>
+				</div>
+				<div class="xg-ban"></div>
+				
+				<div class="vipform">
+					<p>增加会员</p>
+					<form method="get" onsubmit="return checkthree()">
+					
+						<li class="re-df-list">
+							会员号：<input id="vip-re-bianhao" type="text" />
+						</li>
+						<li class="re-df-list">
+							姓名：<input id="vip-re-name" type="text" />
+						</li>
+						<li class="re-df-list">
+							身份证：<input id="vip-re-phone" type="text" />
+						</li>
+						<li class="re-df-list">
+							出生日期：<input id="vip-re-pay" type="text">
+						</li>
+						
+						<li class="re-df-list">
+							历史消费：<input id="vip-re-date" type="text">
+						</li>
+						<li class="re-df-list">
+							余额：<input id="vip-re-ye" type="text">
+						</li>
+						<li class="re-df-list">
+							加入会员时间：<input id="vip-re-time" type="text">
+						</li>
+						
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+					</form>
+				</div>
+				<div class="vipban"></div>
+			</div>
 		</div>
 		
 		
@@ -210,6 +328,86 @@
            		$('.cmt-sale').slideToggle()
            	})
            	
+           	$('.ban').click(function(){
+           		$('.ban').hide()
+           		$('.dis-form').hide()
+           	})
+           	
+           	$('#addRec').click(function(){
+           		$('.ban').show()
+           		$('.dis-form').show()
+           	})
+           	
+           	function check () {
+           		var a = document.getElementById('re-bianhao').value
+	           	var b = document.getElementById('re-name').value
+	           	var c = document.getElementById('re-phone').value
+	           	var d = document.getElementById('re-pay').value
+	           	var e = document.getElementById('re-date').value  
+	           	var f = document.getElementById('re-func').value     
+	           	var g = document.getElementById('re-sure').value     
+	           	  
+           		if (a === '' || b === '' || c === '' || d === '' || e === '' || f === '' || g === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		return true  
+           	}    
+           	
+           	$('#re-xg').click(function () {
+           		$('.xg-ban').show()
+           		$('.re-xg-form').show()
+           		
+           		var a = $('#cmt-id').text()
+           		console.log(a)
+           		$('#re-id').text(a)
+           	})
+           	$('.xg-ban').click(function () {
+           		$('.xg-ban').hide()
+           		$('.re-xg-form').hide()
+           	})
+           	
+           	function checked () {
+//         		var a = document.getElementById('re-bianhao').value
+	           	var b = document.getElementById('re-xg-name').value
+	           	var c = document.getElementById('re-xg-phone').value
+	           	var d = document.getElementById('re-xg-pay').value
+	           	var e = document.getElementById('re-xg-date').value  
+	           	var f = document.getElementById('re-xg-func').value     
+	           	var g = document.getElementById('re-xg-sure').value     
+	           	  
+           		if (b === '' || c === '' || d === '' || e === '' || f === '' || g === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		return true  
+           	}
+           	
+           	$('#addVip').click(function() {
+           		$('.vipban').show()
+           		$('.vipform').show()
+           	})
+           	
+           	$('.vipban').click(function() {
+           		$('.vipban').hide()
+           		$('.vipform').hide()
+           	})
+           	
+           	function checkthree () {
+           		var a = document.getElementById('vip-re-bianhao').value
+	           	var b = document.getElementById('vip-re-name').value
+	           	var c = document.getElementById('vip-re-phone').value
+	           	var d = document.getElementById('vip-re-pay').value
+	           	var e = document.getElementById('vip-re-date').value  
+	           	var f = document.getElementById('vip-re-ye').value     
+	           	var g = document.getElementById('vip-re-time').value     
+	           	  
+           		if (a === '' || b === '' || c === '' || d === '' || e === '' || f === '' || g === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		return true  
+           	}    
 			
 		</script>
 	</body>

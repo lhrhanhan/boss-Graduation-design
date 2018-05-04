@@ -30,7 +30,7 @@
 					</li>
 					<li class="as-list sec-as-list">
 						<img src="../img/baobiao.png"/>
-						<a href="reception.html">报表中心</a>
+						<a href="##">报表中心</a>
 					</li>
 					<li class="as-list">
 						<img src="../img/caidan.png"/>
@@ -64,15 +64,16 @@
 				</div>
 					
 				<!--权限管理界面-->
-				<div class="rootManagement">
+				<div class="st-rootManagement">
 					<div class="cm-title">报表中心</div>
 					
 					<div class="content-active">
-						<button>报表中心导出EXCLE</button>
-						<button>月销售额导出EXCLE</button>
+						<button id="dayStae">查看报表</button>
+						<button id="day">报表中心导出EXCLE</button>
+						<button id="month">月销售额导出EXCLE</button>
 					</div>
 					
-					<div class="cm-table">
+					<div class="st-cm-table">
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;报表信息</p>
 						<div class="cmt-tbody">
 							<table border="0" cellspacing="0" cellpadding="8">
@@ -103,11 +104,13 @@
 							<div class="cmt-tbody">
 							<table border="0" cellspacing="0" cellpadding="8">
 								<tr>
-									<th width="50%">每日销售单数</th>
-									<th width="50%">总销售额</th>
+									<th width="40%">日期</th>
+									<th width="30%">销售单数</th>
+									<th width="30%">总销售额</th>
 								</tr>
 								
 								<tr id="cmt-list">
+									<td>2018年12月11号</td>
 									<td>1111</td>
 									<td>33333333</td>
 								</tr>
@@ -137,24 +140,11 @@
             let time =formatDate(nowTime);
            	$('.nowtime').text(time)
            	
-           	$('#delete').click(function(){
-           		$('#cmt-list').remove()
-           	})
-           	
-           	$('.sr-list').click(function(){
-           		$('.content-main').show()
-           		$('.rootManagement').hide()
-           	})
-           	
-           	$('.sr-list-last').click(function(){
-           		$('.content-main').hide()
-           		$('.rootManagement').show()
-           	})
-           	
-//         	$('.as-list').click(function(){
-//         		let inx = $(this).index()
-//         		$('.as-list').css('background-color':'#4C5762')
-//         	})
+           $('#dayStae').click(function () {
+           		$('.st-cm-table').slideToggle()
+           })
+           
+           
            	
            	
 			

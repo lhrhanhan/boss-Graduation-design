@@ -64,12 +64,13 @@
 				</div>
 					
 				<!--权限管理界面-->
-				<div class="rootManagement">
-					<div class="cm-title">菜单管理</div>
+				<div class="war-rootManagement">
+					<div class="cm-title">食材管理</div>
 					
 					<div class="content-active">
-						<button>食材入库</button>
+						<button id="add-food">食材入库</button>
 						<button id="dised">库存汇总</button>
+						<button>查询食材</button>
 					</div>
 					
 					<div class="cm-table">
@@ -77,28 +78,118 @@
 						<div class="cmt-tbody">
 							<table border="0" cellspacing="0" cellpadding="8">
 								<tr>
-									<th width="7%">分类名称</th>
 									<th width="15%">菜品编号</th>
+									<th width="7%">分类名称</th>
+									
 									<th width="10%">食材种类</th>
 									<th width="10%">适用季节</th>
 									<th width="10%">菜品名称</th>
-									<th width="20%">数量</th>
-								</tr>
+									<th width="10%">数量</th>
+									<th width="10%">操作</th>
+								</tr> 
 								
 								<tr id="cmt-list">
+									<td id="food-id">502</td>
 									<td>热菜</td>
-									<td>502</td>
 									<td>土豆</td>
 									<td>春，夏，秋，冬</td>
 									<td>面条</td>
 									<td>30</td>
+									<td><button>删除</button><button id="wa-xg">修改</button></td>
 								</tr>
 							</table>
 						</div>
 					</div>
 				</div>
 			</div>
-		
+			<div class="footer">
+				<div class="dis-form">
+					<p>增加食材</p>
+					<form method="get" onsubmit="return check()">
+					
+						<li class="re-df-list">
+							菜品编号：<input id="re-bianhao" type="text" />
+						</li>
+						<li class="re-df-list">
+							分类名称：<select name="" id="wa-cata">
+								<option value="素菜">素菜</option>
+								<option value="汤菜">汤菜</option>
+								<option value="荤菜">荤菜</option>
+								<option value="主食">主食</option>
+								<option value="半荤">半荤</option>
+								<option value="凉菜">凉菜</option>
+							</select>
+						</li>
+						<li class="re-df-list">
+							食物种类：<input id="re-phone" type="text" />
+						</li>
+						<li class="re-df-list">
+							适用季节：<select name="" id="wa-j">
+								<option value="春">春</option>
+								<option value="夏">夏</option>
+								<option value="秋">秋</option>
+								<option value="冬">冬</option>
+							</select>
+						</li>
+						
+						<li class="re-df-list">
+							菜品名称：<input id="re-date" type="text">
+						</li>
+						<li class="re-df-list">
+							数量：<input id="re-num" type="text">
+						</li>
+					
+						
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+					</form>
+				</div>
+				<div class="ban"></div>
+				
+				<div class="wa-xg-form">
+					<p>修改食材</p>
+					<form method="get" onsubmit="return checked()">
+						<li class="re-df-list">
+							食材编号：<span id="wa-rxg-id"></span><span class="noXg">(此项不能修改)</span>
+						</li>
+						<li class="re-df-list">
+							分类名称：<select name="" id="wa-cata">
+								<option value="素菜">素菜</option>
+								<option value="汤菜">汤菜</option>
+								<option value="荤菜">荤菜</option>
+								<option value="主食">主食</option>
+								<option value="半荤">半荤</option>
+								<option value="凉菜">凉菜</option>
+							</select>
+						</li>
+						<li class="re-df-list">
+							食物种类：<input id="wa-re-phone" type="text" />
+						</li>
+						<li class="re-df-list">
+							适用季节：<select name="" id="wa-wa-j">
+								<option value="春">春</option>
+								<option value="夏">夏</option>
+								<option value="秋">秋</option>
+								<option value="冬">冬</option>
+							</select>
+						</li>
+						
+						<li class="re-df-list">
+							菜品名称：<input id="wa-re-date" type="text">
+						</li>
+						<li class="re-df-list">
+							数量：<input id="wa-re-num" type="text">
+						</li>
+					
+						
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+					</form>
+				</div>
+				<div class="xg-ban"></div>
+			</div>
 		</div>
 		
 		
@@ -119,6 +210,57 @@
            $('#dised').click(function(){
            		$('.cm-table').slideToggle()
            })
+           
+           $('#add-food').click(function () {
+           		$('.ban').show()
+           		$('.dis-form').show()
+           })
+           
+           $('.ban').click(function () {
+           		$('.ban').hide()
+           		$('.dis-form').hide()
+           })
+           
+           function check () {
+           		var a = document.getElementById('re-bianhao').value
+	           	var b = document.getElementById('wa-cata').value
+	           	var c = document.getElementById('re-phone').value
+	           	var d = document.getElementById('wa-j').value
+	           	var e = document.getElementById('re-date').value  
+	           	var f = document.getElementById('re-num').value  
+           		if (a === '' || b === '' || c === '' || d === '' || e === '' || f === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		return true	          
+           	}       
+           	
+           	$('#wa-xg').click(function () {
+           		$('.xg-ban').show()
+           		$('.wa-xg-form').show()
+           		var a = $('#food-id').text()
+           		$('#rxg-id').text(a)
+           	})
+           	
+           	$('.xg-ban').click(function () {
+           		$('.xg-ban').hide()
+           		$('.wa-xg-form').hide()
+           	})
+           	
+           	function checked () {
+           		var a = $('#wa-cata').val()
+           		var b = $('#wa-re-phone').val()
+           		var c = $('#wa-wa-j').val()
+           		var d = $('#wa-re-date').val()
+           		var e = $('#wa-re-num').val()
+           		
+           		if (a === '' || b === '' || c === '' || d === '' || e === '') {
+           			alert('请把信息输入完整！')
+           			return false
+           		}
+           		return true
+           	}  
+           
            	
 		</script>
 	</body>
