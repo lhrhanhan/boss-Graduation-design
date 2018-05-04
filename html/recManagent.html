@@ -27,8 +27,9 @@
 					
 					<li class="as-list fifth">
 						<img src="../img/qiantai.png"/>
-						<a href="reception.html">前台管理</a>
+						<a href="##">前台管理</a>
 					</li>
+					
 					
 				</div>
 				
@@ -56,7 +57,7 @@
 					
 					<div class="content-active">
 						<button id="addRec">增加订单</button>
-						<button>查询订单</button>
+						<button id="re-ser">查询订单</button>
 						<button id="find">查看订单</button>
 						<button id="sales">查看营业额</button>
 						<button>导出营业额</button>
@@ -119,6 +120,8 @@
 					
 					<div class="content-active">
 						<button id="addVip">增加会员</button>
+						<button id="findVip">显示会员</button>
+						<button id="serVip">查询会员</button>
 					</div>
 					
 					<div class="cm-vip">
@@ -144,7 +147,7 @@
 									<td>100</td>
 									<td>11</td>
 									<th>2015年7月</th>
-									<td><button>充值</button></td>
+									<td><button id="cz">充值</button></td>
 								</tr>
 							</table>
 						</div>
@@ -270,6 +273,42 @@
 					</form>
 				</div>
 				<div class="vipban"></div>
+				
+				<div class="manSear">
+					<p>查询订单</p>
+					<form method="get" onsubmit="return checkser()">
+						<li class="df-list">
+							订单编号：<input id="ser-id" type="text" />
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="查询"/>
+						</li>
+					</form>
+				</div>
+				
+				<div class="vipSear">
+					<p>查询会员</p>
+					<form method="get" onsubmit="return checkservip()">
+						<li class="df-list">
+							会员号：<input id="ser-vip-id" type="text" />
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="查询"/>
+						</li>
+					</form>
+				</div>
+				
+				<div class="chongzhi">
+					<p>会员充值</p>
+					<form method="get" onsubmit="return vipchongzhi()">
+						<li class="df-list">
+							金额：<input id="vip-chongz" type="text" />
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="确认"/>
+						</li>
+					</form>
+				</div>
 			</div>
 		</div>
 		
@@ -398,7 +437,73 @@
            	$('.zhuxiao').click(function () {
            		$(location).attr('href','index.html')
            	})
+           	
+           $('#re-ser').click(function () {
+           		$('.cm-table').hide()
+           		$('.manSear').show()
+           		$('.ban').show()
+           	})
+           	
+           	$('.ban').click(function () {
+           		$('.manSear').hide()
+           		$('.ban').hide()
+           	})
+           	
+           	function checkser () {
+           		var a = document.getElementById('ser-id').value
+	                    		
+           		if (a === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		$('.ser-table').show()
+           		return true
+           	}
+           	
+           	$('#serVip').click(function() {
+           		$('.vipSear').show()
+           		$('.cm-vip').hide()
+           		$('.ban').show()
+           	})
+           	
+           	$('.ban').click(function() {
+           		$('.vipSear').hide()
+           	})
+           	
+           	function checkservip() {
+           		var a = document.getElementById('ser-vip-id').value
+	                    		
+           		if (a === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		$('.ser-table').show()
+           		return true
+           	}
+           	$('#findVip').click(function() {
+           		$('.cm-vip').slideToggle()
+           	})
+           	
+           	$('#cz').click(function(){
+           		$('.chongzhi').show()
+           		$('.ban').show()
+           	})
+           	
+           	$('.ban').click(function(){
+           		$('.chongzhi').hide()
+           		$('.ban').hide()
+           	})
 			
+			function vipchongzhi() {
+				var a = document.getElementById('vip-chongz').value
+	                    		
+           		if (a === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		$('.ser-table').show()
+           		return true
+			}
 		</script>
 	</body>
 </html>

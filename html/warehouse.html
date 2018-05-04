@@ -71,7 +71,7 @@
 					<div class="content-active">
 						<button id="add-food">食材入库</button>
 						<button id="dised">库存汇总</button>
-						<button>查询食材</button>
+						<button id="wa-sear">查询食材</button>
 					</div>
 					
 					<div class="cm-table">
@@ -190,6 +190,18 @@
 					</form>
 				</div>
 				<div class="xg-ban"></div>
+				
+				<div class="manSear">
+					<p>查询订单</p>
+					<form method="get" onsubmit="return checkser()">
+						<li class="df-list">
+							订单编号：<input id="ser-id" type="text" />
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="查询"/>
+						</li>
+					</form>
+				</div>
 			</div>
 		</div>
 		
@@ -269,6 +281,28 @@
            	$('.zhuxiao').click(function () {
            		$(location).attr('href','index.html')
            	})
+           	
+           	$('#wa-sear').click(function () {
+           		$('.cm-table').hide()
+           		$('.manSear').show()
+           		$('.ban').show()
+           	})
+           	
+           	$('.ban').click(function () {
+           		$('.manSear').hide()
+           		$('.ban').hide()
+           	})
+           	
+           	function checkser () {
+           		var a = document.getElementById('ser-id').value
+	                    		
+           		if (a === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		$('.ser-table').show()
+           		return true
+           	}
            
            	
 		</script>

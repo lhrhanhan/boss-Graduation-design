@@ -70,7 +70,7 @@
 					
 					<div class="content-active">
 						<button id="addDinner">添加菜品</button>
-						<button>查询菜品</button>
+						<button id="or-search">查询菜品</button>
 						<button id="dised">菜品列表</button>
 					</div>
 					
@@ -180,6 +180,18 @@
 				</div>
 				
 				<div class="xg-ban"></div>
+				
+				<div class="manSear">
+					<p>查询菜品</p>
+					<form method="get" onsubmit="return checkser()">
+						<li class="df-list">
+							菜品编号：<input id="ser-id" type="text" />
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="查询"/>
+						</li>
+					</form>
+				</div>
 			</footer>
 		
 		</div>
@@ -263,6 +275,28 @@
            	$('.zhuxiao').click(function () {
            		$(location).attr('href','index.html')
            	})
+           	
+           	$('#or-search').click(function () {
+           		$('.cm-table').hide()
+           		$('.manSear').show()
+           		$('.ban').show()
+           	})
+           	
+           	$('.ban').click(function () {
+           		$('.manSear').hide()
+           		$('.ban').hide()
+           	})
+           	
+           	function checkser () {
+           		var a = document.getElementById('ser-id').value
+	                    		
+           		if (a === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		$('.ser-table').show()
+           		return true
+           	}
 		</script>
 	</body>
 </html>
