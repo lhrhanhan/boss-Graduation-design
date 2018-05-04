@@ -51,6 +51,7 @@
 						<div class="shijian">当前时间为：</div>
 						<div class="nowtime"></div>
 						<div class="zhuxiao"><img src="../img/zhuxiao.png" alt="" /><strong>注销</strong></div>
+						<a href="resPwd.html"><div class="xgpwd">修改密码</div></a>
 					</div>
 					
 					<div class="sec-right">
@@ -128,7 +129,7 @@
 									<td>52212510000101111</td>
 									<td>仓库管理</td>
 									<td>厨师</td>
-									<td><button id="delete">删除</button><button id="rm-xg">修改</button></td>
+									<td><button id="rm-delete">删除</button><button id="rm-xg">修改</button></td>
 								</tr>
 							</table>
 						</div>
@@ -136,6 +137,8 @@
 				</div>
 			
 			</div>
+			
+			
 			<div class="footer">
 				
 				<div class="dis-form">
@@ -262,6 +265,44 @@
 			</div>
 			
 			<div class="rm-xg-ban"></div>
+			
+			<div class="manSear">
+				<p>查询员工</p>
+					<form method="get" onsubmit="return checkser()">
+						<li class="df-list">
+							工号：<input id="ser-id" type="text" />
+						</li>
+						<li class="sum">
+							<input id="sum" type="submit" value="查询"/>
+						</li>
+					</form>
+			</div>
+			<!--查询表-->
+			<div class="ser-table">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;员工信息</p>
+						<div class="cmt-tbody">
+							<table border="0" cellspacing="0" cellpadding="8">
+								<tr>
+									<th width="7%">工号</th>
+									<th width="15%">姓名</th>
+									<th width="32%">身份证</th>
+									<th width="12%">工资</th>
+									<th width="20%">职位</th>
+									<th width="13%">操作</th>
+								</tr>
+								
+								<tr id="cmt-list">
+									<td id="zhujian">111</td>
+									<td>小米</td>
+									<td>52212510000101111</td>
+									<td>4000</td>
+									<td>厨师</td>
+									<td><button id="delete">删除</button><button id="xiugai">修改</button></td>
+								</tr>
+								
+							</table>
+						</div>
+			</div>
 		</div>
 		
 		
@@ -282,7 +323,7 @@
            	$('.nowtime').text(time)
            	
            	$('#delete').click(function(){
-           		$('#cmt-list').remove()
+           		alert('删除')
            	})
            	
            	$('.sr-list').click(function(){
@@ -361,10 +402,7 @@
            			alert('请把信息输入完整！')          			
            			return false
            		}
-           		return true
-           		$('.ban').hide()
-	           	$('.dis-form').hide()
-	          
+           		return true    
            	}           
            	$('#showPerson').click(function() {
            		$('.cm-table').slideToggle()
@@ -410,6 +448,40 @@
            		$('.rm-xg-ban').hide()
            		$('.rm-xg-form').hide()
            	})
+           	
+           	$('#searchPerson').click(function () {
+           		$('.ban').show()
+           		$('.manSear').show()
+           		$('.cm-table').hide()
+           	})
+           	
+           	$('.ban').click(function () {
+           		$('.manSear').hide()
+           	})
+           	
+           	function checkser () {
+           		var a = document.getElementById('ser-id').value
+	                    		
+           		if (a === '') {
+           			alert('请把信息输入完整！')          			
+           			return false
+           		}
+           		$('.ser-table').show()
+           		return true
+           	}      
+           	
+          	$('#sum').click(function() {
+          		alert('ss')
+          	})
+          	
+           	$('#rm-delete').click(function () {
+           		alert('删除成功')
+           	})
+           	
+           	$('.zhuxiao').click(function () {
+           		$(location).attr('href','index.html')
+           	})
+           
 		</script>
 	</body>
 </html>

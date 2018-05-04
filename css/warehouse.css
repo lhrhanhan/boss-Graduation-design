@@ -60,3 +60,13 @@
     text-shadow: 0px 1px 0px #677380;
     margin-top: 20px;
 }
+
+.xgpwd {
+	float: right;
+	position: relative;
+	top: 12px;
+}
+
+.xgpwd:hover {
+	color: #0000FF;
+}

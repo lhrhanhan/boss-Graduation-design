@@ -124,4 +124,12 @@
 	display: none;
 }
 
-.
+.xgpwd {
+	float: right;
+	position: relative;
+	top: 12px;
+}
+
+.xgpwd:hover {
+	color: #0000FF;
+}

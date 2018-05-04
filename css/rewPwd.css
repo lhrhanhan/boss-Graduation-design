@@ -1,0 +1,12 @@
+.res-content {
+	width: 400px;
+	height: 500px;
+	background-color: #fff;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-200px;
+	margin-top:-200px;
+	padding: 49px;
+	box-sizing: border-box;
+}

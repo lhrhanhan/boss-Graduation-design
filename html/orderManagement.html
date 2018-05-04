@@ -53,6 +53,7 @@
 						<div class="shijian">当前时间为：</div>
 						<div class="nowtime"></div>
 						<div class="zhuxiao"><img src="../img/zhuxiao.png" alt="" /><strong>注销</strong></div>
+						<a href="resPwd.html"><div class="xgpwd">修改密码</div></a>
 					</div>
 					
 					<div class="sec-right">
@@ -96,7 +97,7 @@
 									<td>春，夏，秋，冬</td>
 									<td>面条</td>
 									<td>30</td>
-									<td><button>删除</button><button id="or-xg">修改</button></td>
+									<td><button id="or-de">删除</button><button id="or-xg">修改</button></td>
 								</tr>
 							</table>
 						</div>
@@ -254,6 +255,14 @@
            		
            		return true
            	}
+           	
+           	$('#or-de').click(function() {
+           		alert('删除成功')
+           	})
+           	
+           	$('.zhuxiao').click(function () {
+           		$(location).attr('href','index.html')
+           	})
 		</script>
 	</body>
 </html>
